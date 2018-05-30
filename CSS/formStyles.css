@@ -1,0 +1,99 @@
+/*** Mise en forme de la page ***/
+
+body {
+	margin: 1em;
+	padding: 0;
+	text-align: left;
+	color: black;
+	background: white;
+}
+
+}
+/*** Mise en forme du formulaire ***/
+
+#prono_match {
+	border: none;
+	margin: 15px;
+	margin-top: -20px;
+	padding: 0;
+	width:60em;	/*** Largeur du formulaire ***/
+}
+
+
+#titreForm, #piedForm {	/*** Mise en forme du titre et du pied de formulaire ***/
+	font: bold 1.1em;
+	color: white;
+	background: #A20000;
+	margin: 0;
+	padding: .5em;
+}
+#piedForm {
+	text-align: right; /*** Les boutons sont alignés à droite ***/
+}
+#piedForm input {
+	margin-left: 1em;
+}
+#corpForm {	/*** Mise en fome du corps du formulaire (bordure, couleur du fond...) ***/
+	border: 1px double black;
+	color: black;
+	background: #EFE16D;
+	margin: 0;
+	padding-top : 1em;
+}
+#corpForm fieldset {	/*** Mise en forme des cadres ***/
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-style: normal;
+	padding: 0 1em 1em;
+}
+#corpForm legend {	/*** Mise en forme des titres des cadres ***/
+	font-weight: bold;
+	color: black;
+	background: transparent;
+}
+#corpForm p {	/*** Mise en forme des lignes du formulaire ***/
+	padding: .2em 0;
+	margin: 0 0 .2em 0;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left: 50px;
+}
+
+#corpForm fieldset, label{	/*** Mise en forme des intitulés de champs ***/
+	float: left;	/*** Très important, ne pas suprimer ! ***/
+	width: 30%;	/*** Les intitulés prennent 1/3 de la largeur totale du formulaire... ***/
+	text-align: right;	/*** ... et ils sont alignés à droite... ***/
+	margin: 0;
+	padding: 0 .5em 0 0;
+	line-height: 1.8;	/*** ... et centrés verticalement. ***/
+}
+
+#corpForm h6{
+	font: normal;
+	font-size: 12px;
+}
+
+#corpForm label:hover, #piedForm input {
+	cursor: pointer;	/*** Petite astuce pour apprendre aux utilisateurs à cliquer sur les intitulés ***/
+}
+#corpForm label.oblig {
+	font-weight: bold;	/*** Mise en évidence des champs obligatoires ***/
+}
+#corpForm .legende {	/*** Mise en forme des aides contextuelles ***/
+	font-style: italic;
+	color: #666;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+#corpForm .focus {	/*** Mise en avant des champs en cours d'utilisation ***/
+	background: beige;
+	color: black;
+}
+#corpForm .normal {	/*** Retour à l'état normal après l'utilisation ***/
+	background: white;
+	color: black;
+}
+
+

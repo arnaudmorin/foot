@@ -1,0 +1,96 @@
+﻿
+{
+    "timeline":
+    {
+        "headline":"CAN 2013",
+        "type":"default",
+        "text":"",
+        "startDate":"2012,1,19",
+        "date": [
+            {
+                "startDate":"2012,1,19, 15:30:00",
+
+                "headline":"C&eacute;r&eacute;monie ouverture",
+                "text":"",
+                "asset":
+                {
+                    "media":"http://www.youtube.com/watch?feature=player_embedded&v=z2gkivT1HDE",
+                    "credit":"CAF, Starafrica.com",
+                    "caption":""
+                },
+            "tag" : "global"
+            },
+            {
+                "startDate":"2012,1,19, 18:00:00",
+
+                "headline":"Afrique du Sud 0 &ndash; Cap Vert 0 : Le Cap-Vert ne l&apos;a pas vol&eacute;",
+                "text":"Article complet sur <a href=\"http://fr.starafrica.com/football/can-2013-groupe-a-afrique-du-sud-cap-vert-le-match-ouverture-19-janvier.html\">StarAfrica</a>",
+                "asset":
+                {
+                    "media":"http://fr.starafrica.com/football/files/2013/01/615_340_SA_CAN2013_AFRIQUE-DU-SUD-_CAP-VERT.jpg",
+                    "credit":"StarAfrica",
+                    "caption":""
+                }
+                ,
+                "tag" : "groupA"
+            }
+            ,
+            {
+                "startDate":"2012,1,19, 20:00:00",
+
+                "headline":"Angola &ndash; Maroc : 0&ndash;0 L&apos;Angola n&apos;a pas du tout trembl&eacute;",
+                "text":"Article complet sur <a href=\"http://fr.starafrica.com/football/can-2013-groupe-a-angola-maroc-le-match-19-janvier.html\">StarAfrica</a>",
+                "asset":
+                {
+                    "media":"http://fr.starafrica.com/football/files/2012/12/Angola-Team_opt.jpg",
+                    "credit":"StarAfrica",
+                    "caption":""
+                },
+                "tag" : "groupA"
+            },
+            
+            {
+                "startDate":"2012,1,20, 16:00:00",
+
+                "headline":"Ghana 2&ndash; RD Congo 2, Ils ont r&eacute;gal&eacute; !",
+                "text":"Article complet sur <a href=\"http://fr.starafrica.com/football/can-2013-groupe-b-ghana-rdc-congo-le-match-20-janvier.html\">StarAfrica</a>",
+                "asset":
+                {
+                    "media":"http://fr.starafrica.com/football/files/2013/01/615x340_SA_Ghana_01.jpg",
+                    "credit":"StarAfrica",
+                    "caption":""
+                },
+                "tag" : "groupB"
+            },
+    
+            {
+                "startDate":"2012,1,21, 16:00:00",
+
+                "headline":"Zambie 1 &ndash; Ethiopie 1,S&eacute;duisantes Antilopes !",
+                "text":"Article complet sur <a href=\"http://fr.starafrica.com/football/can-2013-groupe-c-zambie-ethiopie-le-match-21-janvier.html\">StarAfrica</a>",
+                "asset":
+                {
+                    "media":"http://fr.starafrica.com/football/files/2013/01/615x340_can2013_ethiopie_supporters.jpg",
+                    "credit":"Panoramic",
+                    "caption":""
+                },
+                "tag" : "groupC"
+            },
+            {
+                "startDate":"2012,1,21, 19:00:00",
+
+                "headline":"Nigeria 1 &ndash; Burkina Faso1, Traor&eacute; le sauveur des Etalons",
+                "text":"Article complet sur <a href=\"http://fr.starafrica.com/football/can-2013-groupe-c-nigeria-burkina-faso-le-match-21-janvier.html\">StarAfrica</a>",
+                "asset":
+                {
+                    "media":"http://fr.starafrica.com/football/files/2013/01/615x340_foot_nigeria.jpg",
+                    "credit":"Panoramic",
+                    "caption":""
+                },
+                "tag" : "groupC"
+            }          
+            
+            
+        ]
+    }
+}

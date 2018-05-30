@@ -1,0 +1,736 @@
+/***********************************************************************
+ * General
+ **********************************************************************/
+html{
+    width: 100%;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    color: #322f2a;
+    width: 100%;
+    background-color: #CCC;
+}
+
+img {
+    border: none;/* Ne pas entourer les images, même si elles contiennent des liens */
+}
+
+a, a:visited, a:link {
+    color: #322f2a; 
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    color: gray;
+    text-decoration:none;
+}
+
+ul, li{
+    list-style: disc;
+}
+
+/*
+ * Header
+ */
+ 
+.conteneur{
+    position: relative;                         /* position relative : les marges seront positionner par rapport au conteneur de l'objet*/
+    padding: 0px;                               /* Pas d'écart entre le bord de l'objet et son contenu */
+    margin: 0px auto;                           /* margin:auto pour centrer l'objet dans la page */
+    top: 0px;                                  /* marge haute */   
+    left: 0px;
+    width: 100%;
+}
+
+.background {
+
+}
+
+.background_left{
+    display: none;
+}
+
+.background_right{
+    display: none;
+}
+
+.background_top{
+    background: url('719px-WC-2014-Brasil.svg.png')  no-repeat 10px 5px;
+    background-size: 110px;
+    background-color: #322f2a;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    padding: 0px;
+    width:100%;
+    height: 110px;
+}
+
+.background_top h1{
+    position: absolute;
+    display: none;
+    color: white;
+    left: 0px;
+    text-align: center;
+    width: 0px;
+    top: 0%;
+    margin:0px;
+}
+
+.flag:nth-child(n){
+    display: none;
+}
+
+.flag{
+    display: none;
+}
+
+/*
+ * Misc
+ */
+
+.info, .success, .warning, .error, .debug {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('Knob Info.png');
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('Knob Valid Green.png');
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('Knob Attention.png');
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('Knob Cancel.png');
+}
+.debug {
+    color: black;
+    background-color: white;
+    background-image: url('Knob Smart.png');
+}
+
+.invisible{
+    display: none;
+}
+
+.generic-small-label{
+    display: none;
+    font-size: 70%;
+}
+
+.generic-line-header{
+    position: relative;
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 120%;
+    font-weight: bold;
+    padding: 15px 0px;
+}
+
+/*
+ * Main content
+ */
+
+.Contenu_Texte{
+    position: absolute;
+    top: 120px;
+    width: 100%;
+}
+
+.Contenu_Texte h1  {
+    font-size: 24px;
+    font-weight: bold;
+    color: dark-gray;
+    text-decoration: none;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.Contenu_Texte h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: dark-gray;
+    margin-top: 0.9em; 
+    margin-bottom: 0.9em;
+    text-decoration:none;   
+    text-align: center;
+}
+
+.Contenu_Texte  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: dark-gray;
+    margin-top: 0.9em; 
+    margin-bottom: 0.9em;   
+    text-align: center;
+}
+
+.Contenu_Texte  h4 {
+    font-size: 14px;
+    text-decoration:underline;
+    color: dark-gray;
+    margin-top:5px;
+    margin-bottom: 5px;;
+}
+
+
+/*
+ * Footer
+ */
+.copyleft {
+    font-size: 8px !important;
+    text-align: center !important;
+}
+
+.copyleft img {
+    vertical-align: middle;
+}
+
+
+/*
+ * Menu
+ */
+
+.menu{
+    text-align: center;
+    font-weight:bold;
+    color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu form{
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu a, .menu a:visited {
+    color: white;
+}
+
+.menu a:hover, .menu a:active{
+    color: gray;
+}
+
+.menu ul {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu li {
+    background-color: #322f2a;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    padding-top: .3em;
+    height: 1.5em;
+    list-style: none;
+    color: white;
+}
+
+.menu h1{
+    font-size: x-large;
+    background-color: #ffffff;
+    color: #322f2a;
+    font-weight:bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: .3em;
+    height: 1.5em;
+}
+
+.menu-select-options{
+    text-align:center;
+    font-weight:bold;
+    color: white;
+    background: inherit;
+}
+
+.menu_highlight{
+    color: red;
+}
+
+.menu-top{
+    position: absolute;
+    top: 10px;
+    color: #FFFFFF;
+    font-size: 40px;
+    left: 40%;
+}
+
+/***********************************************************************
+ * PAGES
+ **********************************************************************/
+
+/*
+ * Register
+ */
+
+.account-line{
+    position: relative;
+    text-align: left;
+    padding: 5px 0px;
+}
+
+.account-labels{
+    display: inline-block;
+    width: 120px;
+}
+
+.account-friendlist-name{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.account-friendlist-action{
+    position: relative;
+    vertical-align: super; 
+    font-size: 70%;
+    display: inline-block;
+}
+.account-friendlist-action img{
+    margin-left: 10px;
+    vertical-align: middle; 
+}
+
+.account-hover{
+    position: absolute;
+    top:0px;
+    left:100px;
+    width:100px;
+    margin: 0px;
+    padding: 0px;
+    z-index:1;
+    display:none;
+}
+
+
+/*
+ * Add matchs
+ */
+
+.addmatch-labels{
+    display: inline-block;
+    width: 120px;
+}
+
+.hasDatepicker{
+    position: absolute;
+    width: 310px;
+    left: 120px;
+    top: 0px;
+}
+
+.addmatch-datepickerContainer{
+    position: relative;
+    height: 250px;
+}
+
+.addmatch-timeContainer{
+    position: relative;
+    height: 60px;
+}
+
+.addmatch-hours-slider{
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    width: 310px;
+}
+
+.addmatch-minutes-slider{
+    position: absolute;
+    left: 120px;
+    top: 30px;
+    width: 310px;
+}
+
+.addmatch-indicator{
+    position: absolute;
+    left: 440px;
+    top: 10px;
+}
+
+.addmatch-hours-indicator{
+}
+
+.addmatch-hours-indicator-h{
+    left: 460px;
+}
+
+.addmatch-minutes-indicator{
+    left: 470px;
+}
+
+.addmatch-minutes-indicator-m{
+    left: 490px;
+}
+
+/*
+ * Do Bet
+ */
+.dobet-betContainer{
+    padding-top:20px;
+}
+
+.dobet-label{
+    display: none;
+}
+
+.dobet-whatisyourbet{
+    display: none;
+}
+
+.dobet-statistics{
+
+}
+
+.dobet-line{
+    /* see in setresult section */
+}
+
+.dobet-team1{
+    /* see in setresult section */
+}
+
+.dobet-team2{
+    /* see in setresult section */
+}
+
+.dobet-inputdiv{
+    /* see in setresult section */
+}
+
+.dobet-input{
+    /* see in setresult section */
+}
+
+/*
+ * Identification
+ */
+
+.ident-labels{
+    display: inline-block;
+    width: 120px;
+}
+
+.ident-form{
+    text-align: center;
+}
+
+/*
+ * Invite friends
+ */
+
+.invite-line{
+    position: relative;
+    padding: 5px 0px;
+}
+
+.invite-friendlist-action{
+    position: relative;
+    vertical-align: super; 
+    font-size: 70%;
+    display: inline-block;
+}
+.invite-friendlist-action img{
+    margin-left: 10px;
+    vertical-align: middle; 
+}
+
+.invite-hover{
+    position: absolute;
+    top:0px;
+    left:50px;
+    width:150px;
+    margin: 0px;
+    padding: 0px;
+    z-index:1;
+    display:none;
+}
+
+/*
+ * Matches Results
+ */
+.matches-results-line{
+    position: relative;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.matches-results-line:nth-child(even){
+    /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.matches-results-line-match{
+    display: inline-block;
+    width: 50%;
+}
+
+.matches-results-line-date{
+    display: none;
+    width: 0%;
+}
+
+.matches-results-line-score{
+    display: inline-block;
+    width: 20%;
+}
+
+.matches-results-line-your-bet{
+    display: inline-block;
+    width: 20%;
+}
+
+.matches-results-line-your-points{
+    display: inline-block;
+    width: 10%;
+    font-weight:bold;
+}
+
+.matches-results-line-stats{
+    display: none;
+    width: 0%;
+}
+
+/*
+ * Rank
+ */
+.rank-line{
+    position: relative;
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 0.8em;
+}
+
+.rank-line:nth-child(even){
+    /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.rank-line-name{
+    display: inline-block;
+    width: 40%;
+}
+
+.rank-line-points{
+    display: inline-block;
+    width: 20%;
+}
+
+.rank-line-gift{
+    display: inline-block;
+    width: 40%;
+}
+
+/*
+ * Register
+ */
+
+.register-line{
+    position: relative;
+    text-align: left;
+    padding: 5px 0px;
+}
+
+.register-labels{
+    display: inline-block;
+    width: 120px;
+}
+
+/*
+ * Set result
+ */
+.setresult-line, .dobet-line{
+    position: relative;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.setresult-team1, .dobet-team1{
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+}
+
+.setresult-team2, .dobet-team2{
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+}
+
+.setresult-inputdiv, .dobet-inputdiv{
+    display: inline-block;
+    width: 50px;
+}
+
+.setresult-input, .dobet-input{
+    text-align: center;
+}
+
+/* TODO :  a partir d'ici, le CSS est à revoir... */
+
+/*
+ * Messageries
+ */
+
+.messagerie_liste{
+    border: thin solid #D4956d;
+    width:700px;
+}
+
+.messagerie_liste img{
+    border: none ;                                  /* Ne pas entourer les images, même s'ils contiennent des liens */
+    vertical-align: middle;                         /* Dans le cas d'une icône suivie d'un texte, par exemple       */
+}
+    
+.messagerie_envoi{
+    border: thin solid #6495ed;
+    width:700px;
+    text-align: center;
+}
+
+.new_mess{
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    left: 30px; 
+    top: 20px;
+    margin-left: 0;
+    font-size: 12;
+    color: red;
+    z-index:4;
+}
+
+/*
+ * Classement
+ */
+
+.tab_classement{
+    width: 700px;
+    text-align: center;
+}
+
+.ligne_0{
+    color: yellow;
+}
+
+.ligne_1{
+    
+}
+
+
+/*
+ * Calendrier
+ */
+
+.calendrier{
+    position: absolute;
+    border-style:solid; 
+    border-width:1px; 
+    border-color:silver;
+    top: 390px;
+    left: 15px;
+}
+
+#calendrier li{
+    list-style: none;   
+}
+
+#libelle {
+    width: 140px;
+    margin: 0 auto;
+    padding: 0;
+}
+.ligne {
+    width: 140px;
+    margin: 0 auto;
+    padding: 0;
+} 
+#libelle li {
+    color : dark-gray;
+    float : left;
+    width : 20px; 
+    font-weight: bold ;
+}
+.ligne li {
+    float : left; 
+    width : 20px; 
+}
+
+.ligne li a, a:hover{
+    list-style: none;
+    text-decoration: none;
+}
+
+li.itemCurrentItem {
+    /* A vous de configurer l'apparence de la date du jour */
+    color: red;
+    font-weight: bold;
+}
+li.itemSelectedItem {
+    /* A vous de configurer l'apparence du jour sélectionné */
+    color: dark-gray;
+}       
+
+/*
+ * Rank graph
+ */
+#containerGraphPlace {
+    background-color: #322f2a;
+    width: 680px;
+    height:320px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+#containerGraphPoints {
+    background-color: #322f2a;
+    width: 680px;
+    height:320px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#chart_div1 {
+ left : 10px;
+ top: 10 px;
+}
+
+#chart_div2 {
+ left : 10px;
+ top: 10 px;
+}
