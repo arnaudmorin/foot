@@ -29,7 +29,6 @@ require_once('passwords.php');
 require_once('config.php');
 require_once('lang/lang.php');
 require_once('includes/miscFunctions.php');
-require_once('Emerginov.php');
 require_once('includes/User.class.php');
 require_once('includes/Friendlist.class.php');
 require_once('includes/SqlConnector.class.php');
