@@ -47,10 +47,10 @@ if (    isset($_REQUEST['team1']) && $_REQUEST['team1'] != ""
                     date
                 )
                 VALUES(
-                    '".mysqli_real_escape_string($_REQUEST['team1'])."',
-                    '".mysqli_real_escape_string($_REQUEST['team2'])."',
-                    '".mysqli_real_escape_string($_REQUEST['round'])."',
-                    '".mysqli_real_escape_string($_REQUEST['group'])."',
+                    '".mysqli_real_escape_string($sql->dbhandle, $_REQUEST['team1'])."',
+                    '".mysqli_real_escape_string($sql->dbhandle, $_REQUEST['team2'])."',
+                    '".mysqli_real_escape_string($sql->dbhandle, $_REQUEST['round'])."',
+                    '".mysqli_real_escape_string($sql->dbhandle, $_REQUEST['group'])."',
                     '"._PLANNED."',
                     '".$_REQUEST['date']." ".$_REQUEST['hours'].":".$_REQUEST['minutes']."'
                 )

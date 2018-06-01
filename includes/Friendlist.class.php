@@ -44,7 +44,7 @@ class Friendlist{
         // Set automatically other variables if requested
         if ($autobuild){
             // Get most of info
-            $req = "SELECT * FROM friendlists WHERE name = '".mysqli_real_escape_string($name)."'";
+            $req = "SELECT * FROM friendlists WHERE name = '".mysqli_real_escape_string($sql->dbhandle, $name)."'";
             $res = $sql->doQuery($req, true);
             
             if ($res){
@@ -57,7 +57,7 @@ class Friendlist{
             }
             
             // Get members
-            $req = "SELECT * FROM friendlists_membership WHERE friendlist_name = '".mysqli_real_escape_string($name)."'";
+            $req = "SELECT * FROM friendlists_membership WHERE friendlist_name = '".mysqli_real_escape_string($sql->dbhandle, $name)."'";
             $res = $sql->fetchAssoc($sql->doQuery($req));
             
             if ($res){

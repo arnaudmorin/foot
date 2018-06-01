@@ -346,9 +346,9 @@ function createFriendlist($friendlist, $password, $description=""){
                             password,
                             description )
                         VALUES (
-                            '".mysqli_real_escape_string($friendlist)."',
-                            '".mysqli_real_escape_string($password)."', 
-                            '".mysqli_real_escape_string($description)."' )
+                            '".mysqli_real_escape_string($sql->dbhandle, $friendlist)."',
+                            '".mysqli_real_escape_string($sql->dbhandle, $password)."', 
+                            '".mysqli_real_escape_string($sql->dbhandle, $description)."' )
                         ");
         
         if ($res)
@@ -381,7 +381,7 @@ function createUser($login, $gift="", $password="", $number="") {
     // Check if user is already created is DB
     $req = "SELECT * FROM members
             WHERE
-                login = '".mysqli_real_escape_string($login)."'
+                login = '".mysqli_real_escape_string($sql->dbhandle, $login)."'
             ";
     $res = $sql->doQuery($req, true);
     
@@ -392,7 +392,7 @@ function createUser($login, $gift="", $password="", $number="") {
     // If user not already in DB
     if (!isset($res['login'])){
         // Create the user in DB
-        $req="INSERT INTO members (login, number, gift, password) VALUES ('".mysqli_real_escape_string($login)."', '".mysqli_real_escape_string($number)."','".mysqli_real_escape_string($gift)."','".md5($password)."');";
+        $req="INSERT INTO members (login, number, gift, password) VALUES ('".mysqli_real_escape_string($sql->dbhandle, $login)."', '".mysqli_real_escape_string($sql->dbhandle, $number)."','".mysqli_real_escape_string($sql->dbhandle, $gift)."','".md5($password)."');";
         $res = $sql->doQuery($req);
         
         // Check result
@@ -592,7 +592,7 @@ function getPronosticsMatch($matchID) {
     $team2Pronos=0;
     
     // SQL request to fetch the name of the teams
-    $req = "SELECT * FROM matches WHERE id_match='".mysqli_real_escape_string($matchID)."'";
+    $req = "SELECT * FROM matches WHERE id_match='".mysqli_real_escape_string($sql->dbhandle, $matchID)."'";
     
     $match = $sql->doQuery($req, true);
     
@@ -600,7 +600,7 @@ function getPronosticsMatch($matchID) {
     $team2=$match['team2_name'];
     
     // SQL request to fetch the pronostics associated with the match
-    $req = "SELECT * FROM pronostics WHERE matches_id_match='".mysqli_real_escape_string($matchID)."'";
+    $req = "SELECT * FROM pronostics WHERE matches_id_match='".mysqli_real_escape_string($sql->dbhandle, $matchID)."'";
     
     $pronos = $sql->fetchAssoc($sql->doQuery($req));
     
@@ -649,7 +649,7 @@ function getStatsBetPerMatch($matchID) {
     $goodBets=0;
     
     // SQL request to fetch the result of the match
-    $req= "SELECT * FROM `matches` WHERE `id_match`='".mysqli_real_escape_string($matchID)."'";
+    $req= "SELECT * FROM `matches` WHERE `id_match`='".mysqli_real_escape_string($sql->dbhandle, $matchID)."'";
     $match = $sql->doQuery($req, true);
     
     
@@ -660,7 +660,7 @@ function getStatsBetPerMatch($matchID) {
                      FROM 
                         pronostics
                      WHERE
-                        matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' 
+                        matches_id_match = '".mysqli_real_escape_string($sql->dbhandle, $match['id_match'])."' 
                         "
                 )
             );
@@ -705,7 +705,7 @@ function getStatsPerMatch($matchID,$friendlist_name) {
     $result = array();
     
     // SQL request to fetch the result of the match
-    $req= "SELECT * FROM `matches` WHERE `id_match`='".mysqli_real_escape_string($matchID)."'";
+    $req= "SELECT * FROM `matches` WHERE `id_match`='".mysqli_real_escape_string($sql->dbhandle, $matchID)."'";
     $match = $sql->doQuery($req, true);
 
     // Select all pronostics for this match
@@ -715,9 +715,9 @@ function getStatsPerMatch($matchID,$friendlist_name) {
                      FROM 
                         pronostics
                      WHERE
-                        matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' 
+                        matches_id_match = '".mysqli_real_escape_string($sql->dbhandle, $match['id_match'])."' 
                     AND    
-                        friendlist_name = '".mysqli_real_escape_string($friendlist_name)."'   
+                        friendlist_name = '".mysqli_real_escape_string($sql->dbhandle, $friendlist_name)."'   
                         "
                 )
             );
@@ -759,7 +759,7 @@ function getGoodBetPerMatch($matchID, $friendlist_name) {
     $result = array();
     
     // SQL request to fetch the result of the match
-    $req= "SELECT * FROM `matches` WHERE `id_match`='".mysqli_real_escape_string($matchID)."'";
+    $req= "SELECT * FROM `matches` WHERE `id_match`='".mysqli_real_escape_string($sql->dbhandle, $matchID)."'";
     $match = $sql->doQuery($req, true);
     
     
@@ -770,9 +770,9 @@ function getGoodBetPerMatch($matchID, $friendlist_name) {
                      FROM 
                         pronostics
                      WHERE
-                        matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' 
+                        matches_id_match = '".mysqli_real_escape_string($sql->dbhandle, $match['id_match'])."' 
                      AND    
-                        friendlist_name = '".mysqli_real_escape_string($friendlist_name)."'   
+                        friendlist_name = '".mysqli_real_escape_string($sql->dbhandle, $friendlist_name)."'   
                         "
                 )
             );
@@ -800,7 +800,7 @@ function getGoodBetPerMatch($matchID, $friendlist_name) {
 function getMatchID($team1, $team2, $round) {
     global $sql;
     // SQL request to fetch the match ID
-    $req= "SELECT * FROM `matches` WHERE `team1_name`='".mysqli_real_escape_string($team1)."' AND `team2_name`='".mysqli_real_escape_string($team2)."' AND `round_name`='".mysqli_real_escape_string($round)."'";
+    $req= "SELECT * FROM `matches` WHERE `team1_name`='".mysqli_real_escape_string($sql->dbhandle, $team1)."' AND `team2_name`='".mysqli_real_escape_string($sql->dbhandle, $team2)."' AND `round_name`='".mysqli_real_escape_string($sql->dbhandle, $round)."'";
     $resource = $sql->doQuery($req);
     $match = $sql->fetchAssoc($resource);
     $matchID= $match['id_match'];
@@ -863,7 +863,7 @@ function getRankPointsProgression($friendlist, $round=false){
     foreach ($days as $day) {
         // Select all matches till this day
         $sqlRound = "";
-        if ($round) $sqlRound = " AND round_name='".mysqli_real_escape_string($round)."'";
+        if ($round) $sqlRound = " AND round_name='".mysqli_real_escape_string($sql->dbhandle, $round)."'";
         $matches = $sql->fetchAssoc(
                         $sql->doQuery(
                             "SELECT * 
@@ -885,8 +885,8 @@ function getRankPointsProgression($friendlist, $round=false){
                              FROM 
                                 pronostics
                              WHERE
-                                matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' AND
-                                friendlist_name = '".mysqli_real_escape_string($friendlistObject->name)."'
+                                matches_id_match = '".mysqli_real_escape_string($sql->dbhandle, $match['id_match'])."' AND
+                                friendlist_name = '".mysqli_real_escape_string($sql->dbhandle, $friendlistObject->name)."'
                                 "
                         )
                     );
@@ -932,7 +932,7 @@ function getRankPointsProgression($friendlist, $round=false){
 function getLoginFromNumber($number) {
 	global $sql;
 	    
-	$req = "SELECT login FROM `members` where number = '".mysqli_real_escape_string($number)."'";
+	$req = "SELECT login FROM `members` where number = '".mysqli_real_escape_string($sql->dbhandle, $number)."'";
 	$login = $sql->fetchAssoc($sql->doQuery($req));
 
 	return $login;
