@@ -51,7 +51,7 @@ foreach ($matches as $match){
         $res = $sql->doQuery($req);
         if (!$res){
             error($lang['setresult-cant-set']);
-            debug(mysql_error());
+            debug(mysqli_error($sql->dbhandle)());
             debug($req);
         }
         else{

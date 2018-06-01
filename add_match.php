@@ -58,7 +58,7 @@ if (    isset($_REQUEST['team1']) && $_REQUEST['team1'] != ""
     $res = $sql->doQuery($req);
     if (!$res){
         error($lang['addmatch-cant-add']);
-        debug(mysql_error());
+        debug(mysqli_error($sql->dbhandle)());
         debug($req);
     }
     else{
