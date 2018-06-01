@@ -77,11 +77,11 @@ class SqlConnector{
      *      It can also return the associative array containing the results
      */
     public function doQuery($query, $fetch=false) {
-        $result = mysqli_query($query, $this->dbhandle);
+        $result = mysqli_query($this->dbhandle, $query);
         if (!$result) {
             // On error return false
-            debug(mysqli_error());
-			return false;
+            debug(mysqli_error($this->dbhandle));
+            return false;
         }
         if ($fetch) return mysqli_fetch_assoc($result);
         else return $result;
