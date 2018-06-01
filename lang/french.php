@@ -426,6 +426,7 @@ C'est vous qui choisissez le cadeau à offrir (une reconnaissance eternelle n'a 
 <h3>Web et SMS</h3>
 <p>Ce site web vous permet de faire tous vos paris, de gérer votre groupe d'amis, etc.</p>
 <p>Mais ce n'est pas tout, vous pouvez recevoir des notifications par SMS, comme par exemple pour recevoir les scores en live !</p>
+<p>Rendez vous dans mon compte une fois connecte pour gerer vos preferences.</p>
 ",
 
 // Help page
