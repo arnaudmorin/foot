@@ -42,11 +42,11 @@ foreach ($matches as $match){
         
         $req = "UPDATE matches
                 SET
-                    team1_result = '".mysql_real_escape_string($_REQUEST['team1_'.$match['id_match']])."',
-                    team2_result = '".mysql_real_escape_string($_REQUEST['team2_'.$match['id_match']])."',
+                    team1_result = '".mysqli_real_escape_string($_REQUEST['team1_'.$match['id_match']])."',
+                    team2_result = '".mysqli_real_escape_string($_REQUEST['team2_'.$match['id_match']])."',
                     status = '"._PLAYED."'
                 WHERE
-                    id_match = '".mysql_real_escape_string($match['id_match'])."'
+                    id_match = '".mysqli_real_escape_string($match['id_match'])."'
                 ";
         $res = $sql->doQuery($req);
         if (!$res){

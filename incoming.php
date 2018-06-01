@@ -103,7 +103,7 @@ $number = preg_replace($pattern, $replace, $number);
 echo("Call from $number\n");
     
 // Try to get user from this number
-$req = "SELECT login, number FROM members where number = '".mysql_real_escape_string($number)."'";
+$req = "SELECT login, number FROM members where number = '".mysqli_real_escape_string($number)."'";
 $usersArray = $sql->fetchAssoc($sql->doQuery($req));
 
 // If we have more than one user or no user at all, exit

@@ -29,7 +29,7 @@ $friendlistName=$_GET['friendlist'];
 
 // SQL request to fetch the name of the teams
 global $sql;
-$req = "SELECT * FROM matches WHERE id_match='".mysql_real_escape_string($matchBet)."'";
+$req = "SELECT * FROM matches WHERE id_match='".mysqli_real_escape_string($matchBet)."'";
 $match = $sql->doQuery($req, true);
 $goodBets=getGoodBetPerMatch($matchBet, $friendlistName);
 

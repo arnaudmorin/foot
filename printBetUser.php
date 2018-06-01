@@ -93,9 +93,9 @@ foreach ($matches as $match){
          FROM
             pronostics
          WHERE
-            members_login = '".mysql_real_escape_string($userLogin)."' AND
-            matches_id_match = '".mysql_real_escape_string($matchID)."' AND
-            friendlist_name = '".mysql_real_escape_string($friendlistName)."'
+            members_login = '".mysqli_real_escape_string($userLogin)."' AND
+            matches_id_match = '".mysqli_real_escape_string($matchID)."' AND
+            friendlist_name = '".mysqli_real_escape_string($friendlistName)."'
         ",
         true
     );

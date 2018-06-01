@@ -58,7 +58,7 @@ class User{
         // Set automatically all variables if autobuild requested
         if ($autobuild){
             // Get most of info
-            $req = "SELECT * FROM members where login = '".mysql_real_escape_string($login)."'";
+            $req = "SELECT * FROM members where login = '".mysqli_real_escape_string($login)."'";
             $res = $sql->doQuery($req, true);
             
             if ($res){
@@ -72,7 +72,7 @@ class User{
                 $this->notification_new_score = ($res['notification_new_score'] == '1' ) ? true : false;
                 
                 // Get friendlists
-                $req = "SELECT friendlist_name FROM friendlists_membership where member_login = '".mysql_real_escape_string($this->login)."'";
+                $req = "SELECT friendlist_name FROM friendlists_membership where member_login = '".mysqli_real_escape_string($this->login)."'";
                 $res = $sql->fetchAssoc($sql->doQuery($req));
                 
                 if ($res){
@@ -131,7 +131,7 @@ class User{
         }
         
         // Doing SQL request
-        $req = "INSERT INTO friendlists_membership VALUES ('".mysql_real_escape_string($friendlist)."','".mysql_real_escape_string($this->login)."')";
+        $req = "INSERT INTO friendlists_membership VALUES ('".mysqli_real_escape_string($friendlist)."','".mysqli_real_escape_string($this->login)."')";
         $res = $sql->doQuery($req);
         
         if (!$res){
@@ -193,7 +193,7 @@ class User{
                             FROM 
                                 matches
                             WHERE
-                                id_match = '".mysql_real_escape_string($matchID)."'
+                                id_match = '".mysqli_real_escape_string($matchID)."'
                                 ", true);
         
         if (!checkIfBetStillPossible($t['date'])) return false;
@@ -204,22 +204,22 @@ class User{
             $alreadyBet = $sql->doQuery("   SELECT * 
                                             FROM pronostics 
                                             WHERE 
-                                                members_login = '".mysql_real_escape_string($this->login)."' AND
-                                                matches_id_match = '".mysql_real_escape_string($matchID)."' AND
-                                                friendlist_name = '".mysql_real_escape_string($friendlist)."'",
+                                                members_login = '".mysqli_real_escape_string($this->login)."' AND
+                                                matches_id_match = '".mysqli_real_escape_string($matchID)."' AND
+                                                friendlist_name = '".mysqli_real_escape_string($friendlist)."'",
                                             true);
             
             // If yes update
             if ($alreadyBet){
                 $sql->doQuery(" UPDATE pronostics 
                                 SET
-                                    team1 = '".mysql_real_escape_string($team1Bet)."',
-                                    team2 = '".mysql_real_escape_string($team2Bet)."',
-                                    joker = '".mysql_real_escape_string($joker)."'
+                                    team1 = '".mysqli_real_escape_string($team1Bet)."',
+                                    team2 = '".mysqli_real_escape_string($team2Bet)."',
+                                    joker = '".mysqli_real_escape_string($joker)."'
                                 WHERE 
-                                    members_login = '".mysql_real_escape_string($this->login)."' AND
-                                    matches_id_match = '".mysql_real_escape_string($matchID)."' AND
-                                    friendlist_name = '".mysql_real_escape_string($friendlist)."'"
+                                    members_login = '".mysqli_real_escape_string($this->login)."' AND
+                                    matches_id_match = '".mysqli_real_escape_string($matchID)."' AND
+                                    friendlist_name = '".mysqli_real_escape_string($friendlist)."'"
                                 );
             }
             // If no, new bet
@@ -233,12 +233,12 @@ class User{
                                     team2,
                                     joker)
                                 VALUES (
-                                    '".mysql_real_escape_string($this->login)."',
-                                    '".mysql_real_escape_string($matchID)."',
-                                    '".mysql_real_escape_string($friendlist)."',
-                                    '".mysql_real_escape_string($team1Bet)."',
-                                    '".mysql_real_escape_string($team2Bet)."',
-                                    '".mysql_real_escape_string($joker)."')"
+                                    '".mysqli_real_escape_string($this->login)."',
+                                    '".mysqli_real_escape_string($matchID)."',
+                                    '".mysqli_real_escape_string($friendlist)."',
+                                    '".mysqli_real_escape_string($team1Bet)."',
+                                    '".mysqli_real_escape_string($team2Bet)."',
+                                    '".mysqli_real_escape_string($joker)."')"
                                 );
             }
         }
@@ -267,9 +267,9 @@ class User{
         foreach($matches as $match){
             $req = "SELECT * FROM pronostics
                     WHERE
-                        members_login = '".mysql_real_escape_string($this->login)."' AND
-                        matches_id_match = '".mysql_real_escape_string($match['id_match'])."' AND
-                        friendlist_name = '".mysql_real_escape_string($friendlist)."'
+                        members_login = '".mysqli_real_escape_string($this->login)."' AND
+                        matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' AND
+                        friendlist_name = '".mysqli_real_escape_string($friendlist)."'
                     ";
             $bet = $sql->doQuery($req, true);
             // If no bet is found for this match, return it
@@ -305,9 +305,9 @@ class User{
         foreach($matches as $match){
             $req = "SELECT * FROM pronostics
                     WHERE
-                        members_login = '".mysql_real_escape_string($this->login)."' AND
-                        matches_id_match = '".mysql_real_escape_string($match['id_match'])."' AND
-                        friendlist_name = '".mysql_real_escape_string($friendlist)."'
+                        members_login = '".mysqli_real_escape_string($this->login)."' AND
+                        matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' AND
+                        friendlist_name = '".mysqli_real_escape_string($friendlist)."'
                     ";
             $bet = $sql->doQuery($req, true);
             // If no bet is found for this match, return it
@@ -334,9 +334,9 @@ class User{
                          FROM
                             pronostics
                          WHERE
-                            members_login = '".mysql_real_escape_string($this->login)."' AND
-                            matches_id_match = '".mysql_real_escape_string($matchID)."' AND
-                            friendlist_name = '".mysql_real_escape_string($friendlist)."'
+                            members_login = '".mysqli_real_escape_string($this->login)."' AND
+                            matches_id_match = '".mysqli_real_escape_string($matchID)."' AND
+                            friendlist_name = '".mysqli_real_escape_string($friendlist)."'
                         ",
                         true
                     );
@@ -407,9 +407,9 @@ class User{
         foreach($matches as $match){
             $req = "SELECT * FROM pronostics
                     WHERE
-                        members_login = '".mysql_real_escape_string($this->login)."' AND
-                        matches_id_match = '".mysql_real_escape_string($match['id_match'])."' AND
-                        friendlist_name = '".mysql_real_escape_string($friendlist)."'
+                        members_login = '".mysqli_real_escape_string($this->login)."' AND
+                        matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' AND
+                        friendlist_name = '".mysqli_real_escape_string($friendlist)."'
                     ";
             $bet = $sql->doQuery($req, true);
             // If no bet is found for this match, return it
@@ -444,7 +444,7 @@ class User{
         
         // Select all matchs for this round or all rounds
         $sqlRound = "";
-        if ($round) $sqlRound = " AND round_name='".mysql_real_escape_string($round)."'";
+        if ($round) $sqlRound = " AND round_name='".mysqli_real_escape_string($round)."'";
         $matches = $sql->fetchAssoc(
                         $sql->doQuery(
                             "SELECT * 
@@ -466,8 +466,8 @@ class User{
                              FROM 
                                 pronostics
                              WHERE
-                                matches_id_match = '".mysql_real_escape_string($match['id_match'])."' AND
-                                friendlist_name = '".mysql_real_escape_string($friendlistObject->name)."'
+                                matches_id_match = '".mysqli_real_escape_string($match['id_match'])."' AND
+                                friendlist_name = '".mysqli_real_escape_string($friendlistObject->name)."'
                                 "
                         )
                     );
@@ -615,8 +615,8 @@ class User{
                             "DELETE FROM 
                                 friendlists_membership
                              WHERE
-                                friendlist_name = '".mysql_real_escape_string($friendlist)."' AND
-                                member_login = '".mysql_real_escape_string($this->login)."'
+                                friendlist_name = '".mysqli_real_escape_string($friendlist)."' AND
+                                member_login = '".mysqli_real_escape_string($this->login)."'
                                 "
                             );
         if (!$res){
@@ -652,9 +652,9 @@ class User{
         // Update the DB
         $result = $sql->doQuery("   UPDATE members
                                     SET
-                                        gift = '".mysql_real_escape_string($gift)."'
+                                        gift = '".mysqli_real_escape_string($gift)."'
                                     WHERE
-                                        login = '".mysql_real_escape_string($this->login)."'
+                                        login = '".mysqli_real_escape_string($this->login)."'
                                     ");
         
         // Check if something went wrong
@@ -688,7 +688,7 @@ class User{
                                     SET
                                         $type = '".$valueString."'
                                     WHERE
-                                        login = '".mysql_real_escape_string($this->login)."'
+                                        login = '".mysqli_real_escape_string($this->login)."'
                                     ");
         
         // Check if something went wrong
@@ -717,9 +717,9 @@ class User{
         
         $result = $sql->doQuery("   UPDATE members
                                     SET
-                                        number = '".mysql_real_escape_string($number)."'
+                                        number = '".mysqli_real_escape_string($number)."'
                                     WHERE
-                                        login = '".mysql_real_escape_string($this->login)."'
+                                        login = '".mysqli_real_escape_string($this->login)."'
                                     ");
         
         // Check if something went wrong
@@ -749,7 +749,7 @@ class User{
                                     SET
                                         password = '".md5($password)."'
                                     WHERE
-                                        login = '".mysql_real_escape_string($this->login)."'
+                                        login = '".mysqli_real_escape_string($this->login)."'
                                     ");
         
         // Check if something went wrong
