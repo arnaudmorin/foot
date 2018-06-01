@@ -20,7 +20,7 @@
 */
 
 define("_DEBUG",1);                                                     // If 1, debug will be printed instead of log to file
-define("_DEBUG_LOGIN", "all");                                       // If all -> debug on all website for anybody
+define("_DEBUG_LOGIN", "arnaud");                                       // If all -> debug on all website for anybody
                                                                         // If a login -> debug only when this user is logged in
 
 define("_AUTOCREATE_FRIENDLISTS", 1);                                   // If 1, the Friend lists will automatically be created when asked by users

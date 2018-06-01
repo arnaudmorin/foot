@@ -33,9 +33,9 @@
 $langArray = Array(
 // HTML
 // headers
-"html-description" => "Pronostics pour l'euro 2016",
+"html-description" => "Pronostics pour la coupe du monde 2018",
 "html-currentlanguage" => "fr",
-"html-keywords" => "Euro 2016, FIFA world cuppronostics, pronostics, bet, pari, sms, vocal, kiosk, emerginov, friends, amis, groupes, groups",
+"html-keywords" => "World cup 2018, FIFA world cuppronostics, pronostics, bet, pari, sms, vocal, kiosk, emerginov, friends, amis, groupes, groups",
 "html-title" => "Pronostics",
 "ie-detected" => "Vous utilisez actuellement <a href='http://www.saveie6.com/'>Internet Explorer</a> pour parcourir ce site. Ce n'est pas très recommandé, vous pouvez vous aider de cette page pour choisir un autre navigateur : <a href='http://browsehappy.com/'>http://browsehappy.com/</a>",
 
@@ -111,7 +111,7 @@ $langArray = Array(
 
 // PAGES
 // General & Misc
-"Welcome" => "Bienvenue au grand concours de pronostics pour l'euro 2016!",
+"Welcome" => "Bienvenue au grand concours de pronostics pour la coupe du monde 2018!",
 "french" => "français",
 "english" => "anglais",
 "date-format-date" => "j/m",
@@ -243,7 +243,7 @@ $langArray = Array(
 "matches-results-versus" => " vs. ",
 
 // Menus
-"menu-title" => "Euro - Menu",
+"menu-title" => "WorldCup - Menu",
 "menu-index" => "Accueil",
 "menu-account" => "Mon compte",
 "menu-matches-results" => "Résultats des matchs",
@@ -260,7 +260,7 @@ $langArray = Array(
 "menu-friendlist-selector" => "Groupe :",
 "menu-news" => "Les nouvelles", 
 "menu-mobile-go" => "menu",
-"menu-title-mobile" => "Euro 2016",
+"menu-title-mobile" => "WorldCup 2018",
 
 // Ranking
 "rank-line-place" => "Place",
@@ -270,14 +270,14 @@ $langArray = Array(
 
 // Register
 "register-title" => "S'enregistrer sur le site",
-"register-phone-number" => "Numéro de téléphone",
+"register-phone-number" => "Numéro de téléphone (pour les SMS)",
 "register-password" => "Mot de passe",
 "register-gift" => "Cadeau pour le vainqueur",
 "register-name" => "Login",
 "register-friendlist" => "Nom de groupe",
 "register-friendlist-password" => "Mot de passe du groupe",
 "register-all-required" => "Tous les champs avec une * sont obligatoires",
-"register-international-phone-only" => "(format international sans espace: ex. +33612345678 ou +221771234567)",
+"register-international-phone-only" => "(format international sans espace: ex. +33612345678)",
 "register-please-fill-number" => "Merci de remplir votre numéro correctement !",
 "register-please-fill-name" => "Merci de remplir votre nom correctement !",
 "register-please-fill-password" => "Merci de remplir votre mot de passe correctement !",
@@ -310,7 +310,7 @@ $langArray = Array(
 "invite" => "invite",
 "sms_action_unknown" => "Oops, je n'ai pas compris !",
 "sms_authorized_actions" => "Les mots clés autorisés sont : \n",
-"sms_invite_1" => "vous invite à rejoindre l'application de pari pour l'euro 2016. Envoyez 'Foot join",
+"sms_invite_1" => "vous invite à rejoindre l'application de pari pour la coupe du monde 2018. Envoyez 'Foot join",
 "no_friendlist_selected" => "Aucun groupe selectionné. envoyer Foot join ou créer un groupe sur le site web",
 "user_not_registered" =>"Vous n'êtes probablement pas enregistré sur le site de pronostics. Envoyer 'Foot join'.",
 "friendlist_required" => "Groupe ou mot de passe du groupe inconnu",
@@ -343,7 +343,7 @@ $langArray = Array(
 "sms-notification-do-bet-2" => " - ",
 "sms-notification-do-bet-3" => " \nva bientôt débuter et vous n'avez pas encore parié !",
 "sms-notification-do-bet-4" => "\nRépondez par 'Foot info' pour gérer vos paris.",
-"sms-notification-resume-day-1" => "Les résultats d'hier pour l'euro 2016 sont : \n",
+"sms-notification-resume-day-1" => "Les résultats d'hier pour la coupe du monde 2018 sont : \n",
 "sms-notification-resume-day-2" => " vs ",
 "sms-notification-resume-day-3" => " : ",
 "sms-notification-rank-title" => "\nVotre classement :",
@@ -374,7 +374,7 @@ $langArray = Array(
 
 // IVR
 "ivr_hello" => "Bonjour ",
-"ivr_welcome" => "Bienvenue sur le kiosque de pronostics pour l'Euro 2016.",
+"ivr_welcome" => "Bienvenue sur le kiosque de pronostics pour la coupe du monde 2018.",
 "ivr_error_unknown_number" => "Nous ne connaissons pas votre numéro de téléphone ! Merci de vous connecter sur le site web et d'ajouter votre numéro dans la rubrique mon compte.",
 "ivr_error_to_many_accounts" => "Votre numéro de téléphone est utilisé pour plusieurs comptes, impossible de parier par téléphone !",	
 "ivr_bye" => "Aurevoir",
@@ -413,7 +413,7 @@ $langArray = Array(
 // Index
 "index-welcome" => "
 <h3>Bienvenue!</h3>
-<p>L'euro 2016 débute en juin en France. Quoi de mieux qu'un petit concours de pronostics entre amis pour profiter
+<p>La coupe du monde débute en juin en Russie. Quoi de mieux qu'un petit concours de pronostics entre amis pour profiter
 de ce tournoi international de football ?</p>
 <p>Vous pouvez d'ores et déjà vous inscrire gratuitement sur ce site pour en profiter pleinement !</p>
 
@@ -423,21 +423,17 @@ vous rejoignez un groupe public de parieurs: Tout le monde. Ca permet aux joueur
 Par contre, si vous êtes invité dans un groupe privé ou si vous créez votre propre groupe (boulot, famille), en vous inscrivant, vous vous vous engagez à donner un petit cadeau au vainqueur. 
 C'est vous qui choisissez le cadeau à offrir (une reconnaissance eternelle n'a pas de prix mais est acceptée), soyez créatifs et généreux !</p>
 
-<h3>Web, SMS, Appels</h3>
+<h3>Web et SMS</h3>
 <p>Ce site web vous permet de faire tous vos paris, de gérer votre groupe d'amis, etc.</p>
-<p>Mais ce n'est pas tout, vous pouvez tout aussi bien effectuer vos paris, connaître les statistiques de votre groupe d'amis ou même votre classement
- <b>par SMS!</b></p>
- <p>Mieux encore, vous pouvez aussi faire toutes ces choses par <b>appel vocal!</b></p>
- <p>Pour avoir plus d'information sur l'utilisation de ces services, merci de cliquer sur la rubrique aide du menu.</p>
+<p>Mais ce n'est pas tout, vous pouvez recevoir des notifications par SMS, comme par exemple pour recevoir les scores en live !</p>
 ",
 
 // Help page
 "help-title" => "Comment profiter de ce site au maximum ?",
 "help-content-1" => "
 <p><b>Que puis-je faire avec ce site ?</b></p>
-<p>--> Vous pouvez faire des pronostics sur les matches de l'euro. Chaque pari vous rapporte des
-points. Un classement permet de vous comparer à vos amis. Vous pouvez faire vos paris directement sur ce site web, par SMS ou par appel
-vocal.</p>
+<p>--> Vous pouvez faire des pronostics sur les matches. Chaque pari vous rapporte des
+points. Un classement permet de vous comparer à vos amis.</p>
 
 <p><b>Comment m'inscrire sur le site ?</b></p>
 <p>--> Rien de plus simple ! Il vous suffit de cliquer sur le menu S'enregistrer et de fournir toutes les informations nécessaires !
@@ -454,26 +450,6 @@ demandez le nom et le mot de passe du groupe en question à vos amis et ajoutez 
 <p><b>Mais à quoi sert ce système de groupe ?</b></p>
 <p>--> Avec ce système de groupe, vous pouvez créer de nouveaux groupes d'amis et lancer une nouvelle compétition de pronostics !
 Rien de plus simple, tout se passe dans le menu Mon Compte !</p>
-
-<p><b>Comment faire des paris par SMS ?</b></p>
-<p>--> Ah, la bonne question ! Rien de plus simple : une fois inscris, envoyez Foot info par SMS au numéro qui convient (voir plus bas)
-(prix d'un SMS non surtaxé).
-Vous allez alors recevoir une réponse par SMS vous indiquant vos groupes d'amis, votre prochain pari à effectuer ainsi que la méthode
-à utiliser pour parier. </p>
-<p>Pour obtenir des statistiques sur le prochain match à parier, envoyez Foot stat.</p>
-<p>Pour obtenir votre classement, envoyez Foot clas.</p>
-<p>Pour rejoindre un groupe (ici le groupe \"Mes amis\" dont le mot de passe est 1234), Foot join Mes amis 1234.</p>
-<p>Pour inviter vos amis à rejoindre un groupe, Foot invite +3312345678,+3323456789,+3334567890 Mes amis 1234.</p>
- 
-<p><b>A quel numéro dois-je envoyer les SMS ?</b></p>
-<p>--> En France, il faut envoyer les SMS au +33 7 87 90 39 52</p>
-<p>--> Au Mali, il faut envoyer les SMS au (pas encore disponible)</p>
- 
-<p><b>Vous m'avez aussi parlé d'appels vocaux ?</b></p>
-<p>--> Oui, vous pouvez aussi faire des paris par téléphone en appelant un des numéros suivants (prix d'un appel normal selon votre
-offre tarifaire) :</p>
-<p>En France : pas encore disponible</p>
-<p>Au Mali : pas encore disponible </p>
 
 <p><b>Comment sont comptés les points ?</b></p>
     <p>

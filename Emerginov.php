@@ -36,6 +36,19 @@ class Emerginov{
     }
 
     function SendSMS($number, $message) {
-        // TODO
+        return new EmerginovResult(True, 'Good');
+    }
+}
+
+class EmerginovResult{
+    public $Success;
+    public $Result;
+
+    /* *************************************************************************
+     * Constructor
+     * ************************************************************************/
+    function __construct($Success, $Result) {
+        $this->Success = $Success;
+        $this->Result = $Result;
     }
 }
