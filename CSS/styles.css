@@ -599,6 +599,7 @@ ul, li{
 
 .setresult-input, .dobet-input{
     text-align: center;
+    width: 70px;
 }
 
 /* TODO :  a partir d'ici, le CSS est à revoir... */
