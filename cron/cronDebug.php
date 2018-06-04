@@ -270,18 +270,29 @@ else{
  **********************************************************************/
 echo "\n\n ******** NOTIFICATION LIVE SCORE ******** \n";
 // get DOM from URL or file with random 8 digits at the end of url request to bypass proxy cache...
-$html = file_get_html('http://www.livescores.com/worldcup/?'.substr(str_shuffle(str_repeat('0123456789',8)),0,8));
+$opts = array(
+    'http' => array(
+        'protocol_version'=>'1.1',
+        'method'=>'GET',
+        'header'=>array(
+            'Connection: close'
+        ),
+        'user_agent'=>'Mozilla'
+     )
+); 
+$context = stream_context_create($opts);
+$html = file_get_html('http://www.livescores.com/worldcup/?'.substr(str_shuffle(str_repeat('0123456789',8)),0,8), false, $context);
 //$string = $html;
 //echo $string;
 
-// foreach tr class="match"
-foreach ($html->find('tr.match') as $tr){
+// foreach div class="row-light"
+foreach ($html->find('div.row-light') as $tr){
     //print_r($tr->plaintext);
     
     // Parse HTML to get values
-    $team1 = trim($tr->find('td.tl',0)->plaintext);
-    $team2 = trim($tr->find('td.tr',0)->plaintext);
-    $score = str_replace(array(" "),array(""),trim($tr->find('td.fs',0)->plaintext));
+    $team1 = trim($tr->find('div.ply',0)->plaintext);
+    $team2 = trim($tr->find('div.ply',1)->plaintext);
+    $score = str_replace(array(" "),array(""),trim($tr->find('div.sco',0)->plaintext));
     
     // If score is ?-?, match not yet started, continue
     if ($score == "?-?") continue;

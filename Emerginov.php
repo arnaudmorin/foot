@@ -25,18 +25,47 @@ The Friendlist class represents a Friendlist in the betting system
 */
 
 class Emerginov{
-    public $api_login;
-    public $api_password;
+    private $api_login;
+    private $api_password;
 
     /* *************************************************************************
      * Constructor
      * ************************************************************************/
     function __construct($api_login, $api_password) {
-        // TODO
+        $this->api_login = $api_login;
+        $this->api_password = $api_password;
     }
 
     function SendSMS($number, $message) {
-        return new EmerginovResult(True, 'Good');
+        $res = $this->http_post('http://maison.arnaudmorin.fr:5000/send', array(
+            'message' => $message,
+            'to'      => str_replace('+', '', $number),
+            'token'   => $this->api_password,
+        ));
+
+        if ($res == 'OK') {
+            return new EmerginovResult(True, $res);
+        }
+        else {
+            return new EmerginovResult(False, $res);
+        }
+    }
+
+    function http_post ($url, $data) {
+        $data_url = http_build_query ($data);
+        $data_len = strlen ($data_url);
+    
+        return file_get_contents(
+            $url,
+            false,
+            stream_context_create(array(
+                'http' => array(
+                    'method'  => 'POST',
+                    'header'  => "Connection: close\r\nContent-Length: $data_len\r\nContent-type: application/x-www-form-urlencoded\r\n",
+                    'content' => $data_url
+                 )
+            ))
+        );
     }
 }
 
