@@ -46,12 +46,12 @@ echo    "<div class='generic-line-header'>"
             ."</div>";
 // Temporarly disable gift
 // Disable gift for default friendlist
-/*if (strtolower($_SESSION['friendlist']->name) != strtolower(_DEFAULT_FRIENDLIST)){
+if (strtolower($_SESSION['friendlist']->name) != strtolower(_DEFAULT_FRIENDLIST)){
     echo    "<div class='rank-line-gift'>"
                 .$lang['rank-line-gift']
             ."</div>";
 }
-*/
+
 echo    "</div>";
 
 // Evolution
@@ -146,15 +146,13 @@ foreach ($rank as $login => $points){
                 .$points
             ."</div>";
    
-   // Temporarly suppress gift for CSS
    
-    // Disable gift for default friendlist
-/*    if (strtolower($_SESSION['friendlist']->name) != strtolower(_DEFAULT_FRIENDLIST)){
+    if (strtolower($_SESSION['friendlist']->name) != strtolower(_DEFAULT_FRIENDLIST)){
         echo "<div class='rank-line-gift'>"
                 .$user->gift
             ."</div>";
     }
-*/    
+    
     echo "</div>";
 }
 // =====================================================================

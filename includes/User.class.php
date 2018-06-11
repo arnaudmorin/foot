@@ -510,7 +510,7 @@ class User{
 				foreach ($friends as $i) {
 					mb_internal_encoding("UTF-8");
                     $headers = "";
-                    $headers .= "From: Bresil 2014 <noreply@emerginov.com>\n";
+                    $headers .= "From: "._MAIL_FROM."\n";
                     $headers .= "MIME-version: 1.0\n"; 
                     $headers .= "Content-Type: text/plain; charset=utf-8\n";         
 

@@ -19,7 +19,7 @@
 
 */
 
-define("_DEBUG",1);                                                     // If 1, debug will be printed instead of log to file
+define("_DEBUG",0);                                                     // If 1, debug will be printed instead of log to file
 define("_DEBUG_LOGIN", "arnaud");                                       // If all -> debug on all website for anybody
                                                                         // If a login -> debug only when this user is logged in
 
@@ -32,9 +32,11 @@ define("_ADD_IN_DEFAULT_FRIENDLIST", 1);                                // If 1,
 define("_DEFAULT_FRIENDLIST", $default_friendlist);                     // Default friendlist (variable defined in passwords.php)
 define("_DEFAULT_FRIENDLIST_PASSWORD", $default_friendlist_password);   // Default friendlist password (variable defined in passwords.php)
 
+define("_MAIL_FROM", "Foot World Cup <no-reply@mailops.fr>");
+
 // Website
-define("_WEBSITE_BASEURL", "projects.emerginov.com");
-define("_WEBSITE_BASEFOLDER", "/Foot");
+define("_WEBSITE_BASEURL", "arno.ovh");
+define("_WEBSITE_BASEFOLDER", "");
 
 // Lang things
 define("_LANG_DEFAULT", "french.php");

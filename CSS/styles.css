@@ -543,17 +543,17 @@ ul, li{
 
 .rank-line-name{
     display: inline-block;
-    width: 40%;
+    width: 30%;
 }
 
 .rank-line-points{
     display: inline-block;
-    width: 20%;
+    width: 15%;
 }
 
 .rank-line-gift{
     display: inline-block;
-    width: 40%;
+    width: 25%;
 }
 
 /*
