@@ -9,7 +9,7 @@ if (isset($_GET['numero'])){
 	
     $ret = $Emerginov->SendSMS($_GET['numero'],$_GET['text']);
     echo "<pre>";
-	print_r($ret);
+    print_r($ret);
     echo "</pre>";
 }
 

@@ -43,7 +43,7 @@ class Emerginov{
             'token'   => $this->api_password,
         ));
 
-        if ($res == 'OK') {
+        if (strpos($res, "OK") === 0) {
             return new EmerginovResult(True, $res);
         }
         else {
