@@ -203,7 +203,6 @@ if (($totalPlayedMatches['count(*)'] == $totalMatches['count(*)']) && ($totalPla
                 //
                 // check the number to detecte the rank of the user
                 //
-                //     
                 $rank_nb=1;
                 $message.=$lang['sms-notification-rank-friendlist'].$i;
 
