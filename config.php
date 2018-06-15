@@ -63,7 +63,7 @@ define("_NOTIFICATION_NOT_BET", " 2 HOUR ");
 // Usually it's 1 DAY
 define("_NOTIFICATION_RESUME_INTERVAL", " 1 DAY ");
 // This is the hour we must wait before sending notification (we consider that results will be entered before this time). 24 Hour format. Local time
-define("_NOTIFICATION_RESUME_TIME", 4);
+define("_NOTIFICATION_RESUME_TIME", 9);
 
 // Matches statuses
 define("_PLAYED", "PLAYED");

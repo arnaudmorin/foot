@@ -41,12 +41,14 @@
 set_include_path(get_include_path() . PATH_SEPARATOR . "../");
 require_once("loader.php");
 
-// Get SMS information
-$sender = $_REQUEST["SOA"];
-$content = $_REQUEST["Content"];
+// Open a log file
+$fh = fopen("log","a");
 
 $sender=$_REQUEST['SOA'];
 $content=preg_split('/ /', $_REQUEST['Content'], 2);
+
+// Write SMS content to this log file
+fwrite($fh, "---- On ".date("r").", I received a SMS from: $sender. Content is: ".print_r($content, True)."\n");
 
 $text = $content[1];
 $content2=preg_split('/ /', $text, 2);
@@ -60,12 +62,6 @@ $text=$content2[1];
 
 $Emerginov = new Emerginov($api_login, $api_password);
 
-// Open a log file
-//$fh = fopen("log","a");
-
-// Write SMS content to this log file
-//fwrite($fh, "---- On ".date("r").", I received a SMS from: $sender. Content is: $content\n");
-
 // ----------------------------------------------------------------------------------------------------------------
 // 
 //
@@ -78,10 +74,10 @@ $login = getLoginFromNumber($sender);
 // if login OK =======> proceed operation
 // if not send a SMS telling to create an account
 if (empty($login) ) {
-	 $text_sms =$lang['user_not_registered'];
+    fwrite($fh, "Cannot find user\n");
+    $text_sms =$lang['user_not_registered'];
 
     // send SMS
-    //echo($text_sms);
     $Emerginov->sendSMS($sender,$text_sms); 
     exit();
 } 

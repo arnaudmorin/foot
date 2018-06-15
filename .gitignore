@@ -1,1 +1,4 @@
 passwords.php
+log
+cron/*
+!cron/cron*
