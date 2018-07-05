@@ -183,7 +183,7 @@ Translate and List refer to Translateuage class linked to Google Translate API
         // 1 2 CAN bet 1 2
         // TODO for the moment we do not consider country name
         //$regex = "#('/ /'|'/-/'|'/,/'|'/:/')#";
-        $regex = "/[:,-\s]/";
+        $regex = "/-/";
         $score=preg_split($regex, $text, 2);
         // 3-2
         // => score[0]=3
